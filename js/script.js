@@ -44,7 +44,7 @@ let firstTimer = setTimeout(() => {
     // timer per i prompt
     let secondTimer = setTimeout(() => {
        numUser = [];
-    //    chiedo 5 volte di inserire un numero all'utente
+        //    chiedo 5 volte di inserire un numero all'utente
        for (let index = 0; index < 5; index++) {
            let userSelection = parseInt(prompt('inserisci numero da 1 a 100'));
            while (numUser.includes(userSelection)){
@@ -55,8 +55,22 @@ let firstTimer = setTimeout(() => {
            numUser.push(userSelection);
            console.log('numeri utente: ', numUser);
        } 
+        
+       // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
+    //    metto a confronto i array numeri random e array numeri scelti dall'utente
+       let checkArrays = numRandomArray.filter(element => numUser.includes(element));
+
+    //    stampo i risultati
+       if (checkArrays.length == 0) {
+        randNumContainer.innerHTML  = 'Non ne hai memorizzato nessuno';
+           
+       } else if (checkArrays.length == 1) {
+           randNumContainer.innerHTML = `Ne hai rmemorizzato solo ${checkArrays.length} ed è ${checkArrays} `
+       } else {
+           randNumContainer.innerHTML =  `Ne hai memorizzati  ${checkArrays.length} e sono ${checkArrays}`
+       }
 
     }, 30000);
 
-}, 3000);
+}, 3000)
