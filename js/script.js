@@ -46,15 +46,17 @@ let firstTimer = setTimeout(() => {
        numUser = [];
     //    chiedo 5 volte di inserire un numero all'utente
        for (let index = 0; index < 5; index++) {
-           let userSelection = parseInt(prompt('inserisci numero'));
+           let userSelection = parseInt(prompt('inserisci numero da 1 a 100'));
            while (numUser.includes(userSelection)){
-            userSelection = parseInt(prompt('inserisci numero'));
+            userSelection = parseInt(prompt('inserisci numero da 1 a 100'));
            }
            
         //    creo array numero utenti
            numUser.push(userSelection);
            console.log('numeri utente: ', numUser);
        } 
-    }, 300);
+
+
+    }, 30000);
 
 }, 3000);
