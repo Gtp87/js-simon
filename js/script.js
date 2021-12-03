@@ -6,6 +6,7 @@
 
 let randNumContainer = document.querySelector('.numbers');
 let numRandomArray = [];
+let numUser = [];
 
 // funzione numeri casuali
 
@@ -33,3 +34,27 @@ console.log(numRandomArray);
 
 // stampo in pagina
 randNumContainer.append(numRandomArray);
+
+// Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+
+//  timer per pulire html
+let firstTimer = setTimeout(() => {
+    randNumContainer.innerHTML = '';
+    
+    // timer per i prompt
+    let secondTimer = setTimeout(() => {
+       numUser = [];
+    //    chiedo 5 volte di inserire un numero all'utente
+       for (let index = 0; index < 5; index++) {
+           let userSelection = parseInt(prompt('inserisci numero'));
+           while (numUser.includes(userSelection)){
+            userSelection = parseInt(prompt('inserisci numero'));
+           }
+           
+        //    creo array numero utenti
+           numUser.push(userSelection);
+           console.log('numeri utente: ', numUser);
+       } 
+    }, 300);
+
+}, 3000);
