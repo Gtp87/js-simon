@@ -63,12 +63,15 @@ let firstTimer = setTimeout(() => {
 
     //    stampo i risultati
        if (checkArrays.length == 0) {
-        randNumContainer.innerHTML  = 'Non ne hai memorizzato nessuno';
+        randNumContainer.innerHTML  = `Non ne hai memorizzato nessuno
+        <h2>i numeri da indovinare erano ${numRandomArray}</h2>`;
            
        } else if (checkArrays.length == 1) {
-           randNumContainer.innerHTML = `Ne hai rmemorizzato solo ${checkArrays.length} ed è ${checkArrays} `
+           randNumContainer.innerHTML = `Ne hai rmemorizzato solo ${checkArrays.length} ed è ${checkArrays} 
+           <h2>i numeri da indovinare erano ${numRandomArray}</h2>`
        } else {
-           randNumContainer.innerHTML =  `Ne hai memorizzati  ${checkArrays.length} e sono ${checkArrays}`
+           randNumContainer.innerHTML =  `Ne hai memorizzati  ${checkArrays.length} e sono ${checkArrays}
+           <h2>i numeri da indovinare erano ${numRandomArray}</h2>`
        }
 
     }, 30000);
